@@ -1,0 +1,22 @@
+pyenv --version
+pyenv versions
+pyenv install 3.10.9
+pyenv global 3.10.9
+pyenv uninstall 3.10.8
+
+cd ~/PycharmProjects/profiling
+pyenv virtualenv 3.10.9 profiling_3.10.9
+pyenv local profiling_3.10.9
+cat ~/PycharmProjects/profiling/.python-version
+pyenv versions
+
+pipenv --python profiling_3.10.9 install
+pipenv shell
+pipenv install memory_profiler
+pipenv check
+pipenv --rm
+
+ls /home/apream/.local/share/virtualenv
+ls /home/apream/.local/share/virtualenvs
+cat /home/apream/.pyenv/version
+cd /home/apream/.pyenv/versions/3.10.9

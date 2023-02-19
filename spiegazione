@@ -1,0 +1,52 @@
+Verifica dei parametri: Il primo passo dello script verifica che siano stati forniti tutti i parametri richiesti: token, versione di Python, nome del progetto e directory del progetto. In caso contrario, lo script termina con un messaggio di errore.
+
+Verifica della directory del modello: Lo script verifica anche se la directory del modello esiste e se i file modello esistono. In caso contrario, lo script termina con un messaggio di errore.
+
+Verifica dei tool installati: Lo script verifica se sono installati pyenv, pyenv-virtualenv, pipenv, git e curl. In caso contrario, lo script termina con un messaggio di errore.
+
+Creazione della struttura del progetto: Lo script crea la directory del progetto se non esiste, quindi crea la struttura del progetto che include README.md, pyproject.toml, LICENSE, src, tests e altri file.
+
+Configurazione di Git: Lo script configura le informazioni globali di Git per l'utente e l'indirizzo email.
+
+Creazione di un ambiente virtuale: Lo script verifica se la versione di Python specificata è installata, quindi crea un ambiente virtuale con pipenv e imposta l'ambiente virtuale come ambiente locale.
+
+Inizializzazione di Git: Infine, lo script inizializza un repository Git all'interno della directory del progetto e esegue il primo commit.
+
+Questo script crea una struttura di base per un progetto Python e configura il file pyproject.toml per il sistema di costruzione setuptools.
+
+I seguenti parametri devono essere passati come argomenti allo script:
+
+python_version: la versione di Python desiderata per il progetto
+project_name: il nome del progetto
+project_directory: il percorso dove creare la struttura del progetto
+Lo script controlla se i seguenti pacchetti sono installati sul sistema: pyenv, pyenv-virtualenv e pipenv. In caso contrario, viene visualizzato un messaggio di errore e lo script viene interrotto.
+
+Successivamente, lo script crea la directory del progetto se non esiste e crea la seguente struttura di base all'interno della directory:
+
+LICENSE
+README.md
+pyproject.toml: questo file viene configurato con i dettagli del progetto, tra cui il nome, la versione, gli autori, la descrizione e la classe di appartenenza.
+src/: directory che contiene i sorgenti del progetto
+tests/: directory che contiene i test per il progetto
+Infine, viene creata una directory all'interno di src/ con il nome project_name_$USER che contiene un file __init__.py e un file project_name.py.
+
+Per eseguire lo script, aprire una finestra terminale e dare i seguenti comandi:
+chmod +x nome_script.sh
+./nome_script.sh
+
+Inizializza un repository Git nel tuo progetto:
+$ git init
+
+Aggiungi tutti i file nell'area di stage:
+$ git add .
+
+Fai una prima commit:
+$ git commit -m "Initial Commit"
+
+Aggiungi il repository remoto su GitHub:
+$ git remote add origin https://github.com/<username>/<repository_name>.git
+
+Carica tutti i file sul repository remoto:
+$ git push -u origin master
+
+Ora il tuo progetto dovrebbe essere caricato sul tuo repository GitHub.
